@@ -1,0 +1,29 @@
+{
+  "title": "Pipeline Error Schema",
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "properties": {
+    "code": {
+      "required": true,
+      "description":"Pipeline Error Code",
+      "type": "string"
+    },
+    "message": {
+      "required": true,
+      "type": "string"
+    },
+    "detail": {
+      "required": false,
+      "type": "string"
+    },
+    "source": {
+      "required": true,
+      "type": "string"
+    },
+    "timeStamp": {
+      "required": true,
+      "description":"server time stamp",
+      "type": "string"
+    }
+  }
+}

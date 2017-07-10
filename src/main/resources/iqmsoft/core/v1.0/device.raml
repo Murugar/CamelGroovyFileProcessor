@@ -1,0 +1,30 @@
+#%RAML 0.8
+title: device
+version: v1
+baseUri: http://project.jibi.com/api/{version}/gb
+traits:  
+  - requestHeaders: !include ../../Shared/v1.0/Traits/requestHeaders.yaml
+schemas:
+  - deviceSchema: !include ./Schemas/device.json
+  - error4xxSchema: !include ../../Shared/v1.0/Schemas/error4xx.json
+  - error5xxSchema: !include ../../Shared/v1.0/Schemas/error5xx.json
+/device:
+  get:
+    is: [requestHeaders ]
+    description: Get Device identification from user agent.    
+    responses:   
+      200:
+        body:
+          application/json:
+            schema: deviceSchema
+            example: !include ./Examples/device.json
+      400:
+        body:
+          application/json:
+            schema:  error4xxSchema
+            example: !include ./Examples/error4xx.json
+      500:
+        body:
+          application/json:
+            schema:  error5xxSchema
+            example: !include ./Examples/error5xx.json 

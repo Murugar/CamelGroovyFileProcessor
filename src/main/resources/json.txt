@@ -1,0 +1,11 @@
+{
+    "Results": [
+        {
+            "ProductId": "1234",
+            "Identifiers": {
+                "BaseProductId": "4321"
+            }
+        }
+    ],
+    "TotalMatchedCount": 1
+}
